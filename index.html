@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Registration Form</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HOD LOGIN</title>
+	<style>
+        body{
+            background-image: url('images/graduate.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            overflow: hidden;
+            background-size: cover;
+           
+        }
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+            margin-left: 33%;
+			font-size: 20px;
+            width:340px;
+            height:480px;
+            border:2px solid black;
+            border-radius: 10px;
+            justify-content: center;
+            backdrop-filter: blur(30px);
+            box-shadow: 2px 5px 5px #9b71e7;
+		}
+		label {
+			margin-bottom: 10px;
+		}
+		input[type="text"], select {
+			padding: 10px;
+			margin-bottom: 20px;
+			width: 390px;
+			font-size: 15px;
+			border-radius: 5px;
+			border: 1px solid gray;
+		}
+		select {
+			width: 300px;
+		}
+		button {
+			padding: 10px 30px;
+			font-size: 20px;
+			border-radius: 5px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #3e8e41;
+		}
+        @media (max-width:480px){
+            form{
+                width:100%;
+                height:70vh;
+                /* margin-right: 50%; */
+                border-radius: 0;
+                margin-top: 10rem;
+               justify-content: center;
+               align-items: center;
+               
+               margin:auto;
+               box-shadow: 2px 6px 6px #9b71e7;
+               border-radius: 10px;
+                
+            }
+            input[type="text"], select {
+                width: 300px;
+			font-size: 12px;
+           
+        }
+        label{
+           margin-right: 47%;
+           color: white;
+        }
+        /* body{
+            width:100%;
+                height:100vh;
+                border:none;
+                border-radius: 0;
+               margin-right: 50%;
+        } */
+    }
+        @media (min-width:1536px){
+            form{
+                width:500px;
+                height: 700px;
+                
+               
+
+            }
+            input[type="text"], select {
+                font-size:20px ;
+                
+            }
+            label{
+                margin-right: 38%;
+                color:aliceblue
+            }
+            button{
+                width:30%;
+                height: 40px;
+
+            }
+
+        }
+	</style>
+	<script>
+		function updateSubjectOptions() {
+    var semester = document.getElementById('semester').value;
+    var branch = document.getElementById('branch').value;
+    var subjectSelect = document.getElementById('subject');
+
+    // Clear existing options
+    subjectSelect.innerHTML = '';
+
+    // Add subject options based on semester and branch
+    if (semester === 'sem1' && (branch === 'cse' || branch === 'it' || branch === 'ece' || branch === 'me' || branch === 'civil')) {
+        var subjects = ['Mathematics-I', 'Physics', 'Chemistry', 'Engineering Graphics', 'BCME', 'Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+    if (semester === 'sem2' && (branch === 'cse' || branch === 'it' || branch === 'ece' || branch === 'me' || branch === 'civil')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem3' && (branch === 'cse')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem3' && (branch === 'it')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem3' && (branch === 'ece')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem3' && (branch === 'me')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem3' && (branch === 'civil')) {
+        var subjects = ['Mathematics-II3', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem4' && (branch === 'cse')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem4' && (branch === 'it')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem4' && (branch === 'ece')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem4' && (branch === 'me')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem4' && (branch === 'civil')) {
+        var subjects = ['Mathematics-II34', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+
+	if (semester === 'sem5' && (branch === 'cse')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem5' && (branch === 'it')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem5' && (branch === 'ece')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem5' && (branch === 'me')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem5' && (branch === 'civil')) {
+        var subjects = ['Mathematics-II35', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+
+	if (semester === 'sem6' && (branch === 'cse')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem6' && (branch === 'it')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem6' && (branch === 'ece')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem6' && (branch === 'me')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem6' && (branch === 'civil')) {
+        var subjects = ['Mathematics-II36', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem7' && (branch === 'cse')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem7' && (branch === 'it')) {
+        var subjects = ['Mathematics-II', 'Applied Physics7', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem7' && (branch === 'ece')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem7' && (branch === 'me')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem7' && (branch === 'civil')) {
+        var subjects = ['Mathematics-II3', 'Applied Physics7', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem8' && (branch === 'cse')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem8' && (branch === 'it')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem8' && (branch === 'ece')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem8' && (branch === 'me')) {
+        var subjects = ['Mathematics-II', 'Applied Physics', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+
+	if (semester === 'sem8' && (branch === 'civil')) {
+        var subjects = ['Mathematics-II3', 'Applied Physics8', 'Engineering Chemistry', 'Basic Electronics Engineering', 'Data Structures and Algorithms', 'Technical Communication Skills'];
+        for (var i = 0; i < subjects.length; i++) {
+            var option = document.createElement('option');
+            option.text = subjects[i];
+            subjectSelect.add(option);
+        }
+    }
+}
+
+	</script>
+</head>
+<body>
+    <div class="main">
+	<form method="post" action="EnterMark.php">
+		<label>Select Year:</label>
+		<select name="year">
+			<option value="1">1st Year</option>
+			<option value="2">2nd Year</option>
+			<option value="3">3rd Year</option>
+			<option value="4">4th Year</option>
+		</select>
+
+		<label>Select SEM:</label>
+		<select id="semester" name="semester" onchange="updateSubjectOptions()">
+			<option value="sem1">Semester 1</option>
+			<option value="sem2">Semester 2</option>
+			<option value="sem3">Semester 3</option>
+			<option value="sem4">Semester 4</option>
+			<option value="sem5">Semester 5</option>
+			<option value="sem6">Semester 6</option>
+			<option value="sem7">Semester 7</option>
+			<option value="sem8">Semester 8</option>
+		</select>
+
+		<label>Select Branch:</label>
+		<select id="branch" name="branch" onchange="updateSubjectOptions()">
+			<option value="cse">CSE</option>
+			<option value="it">IT</option>
+			<option value="ece">ECE</option>
+			<option value="me">ME</option>
+			<option value="civil">CIVIL</option>
+		</select>
+
+		<label>Enter Subject:</label>
+		<select id="subject" name="subject" required>
+			<!-- Subject options will be added dynamically -->
+		</select>
+
+		<button type="submit" id="info">Next</button>
+	</form>
+</div>
+	<script>
+		// Run updateSubjectOptions() initially to populate subjects based on initial selections
+		updateSubjectOptions();
+	</script>
+</body>
+</html>
